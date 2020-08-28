@@ -9,7 +9,7 @@ class Triangle
   end
   
   def kind
-    valid?
+    valid
     if a == b && a == c
       :equilateral
     elsif a == b || a == c || b == c
@@ -19,11 +19,11 @@ class Triangle
     end
   end
   
-  def valid?
+  def valid
     triangles = [(a + b > c), (a + c > b), (b + c > a)]
     [a, b, c].each do |s|
       triangles << false if s <= 0
-    raise TraingleError if valid?.include?(false)
+    raise TraingleError if valid.include?(false)
     end
   end
   
