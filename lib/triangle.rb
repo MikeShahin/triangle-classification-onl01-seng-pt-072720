@@ -23,7 +23,7 @@ class Triangle
     triangles = [(a + b > c), (a + c > b), (b + c > a)]
     [a, b, c].each do |s|
       triangles << false if s <= 0
-    raise TraingleError if valid.include?(false)
+    raise TraingleError if triangles.include?(false)
     end
   end
   
