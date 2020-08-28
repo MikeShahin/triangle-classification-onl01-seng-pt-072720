@@ -9,7 +9,7 @@ class Triangle
   end
   
   def kind
-    valid
+    
     if a == b && a == c
       :equilateral
     elsif a == b || a == c || b == c
@@ -28,6 +28,8 @@ class Triangle
   end
   
   class TraingleError < StandardError
-    "Triangle is not valid"
+    def message 
+      "Triangle is not valid"
+    end
   end
 end
